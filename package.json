@@ -1,0 +1,15 @@
+{
+  "name": "w-flow-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:web": "pnpm --filter web dev",
+    "dev:server": "pnpm --filter server start:dev",
+    "dev": "pnpm dev:web & pnpm dev:server",
+    "build:web": "pnpm --filter web build",
+    "build:server": "pnpm --filter server build"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

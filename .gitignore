@@ -26,6 +26,7 @@ server/out/
 *.sln
 *.sw?
 .DS_Store
+.trae
 
 # Misc
 *.pem
