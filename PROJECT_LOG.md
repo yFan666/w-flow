@@ -39,3 +39,15 @@
   - 设置 docker-compose MySQL 启动参数 character-set-server/collation-server 为 utf8mb4
   - 执行 ALTER TABLE posts CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
 - 结果：已成功写入示例数据 slug=hello-db-2
+
+## 2026-04-01 节点7：Web 导航与主题 UI 改造（shadcn/ui）
+
+- 新增 shadcn/ui 基础依赖：class-variance-authority、clsx、tailwind-merge
+- 新增组件目录：`src/components/ui`，并创建 `Button` 基础组件
+- 新增左侧菜单（文章、标签、图片）与菜单底部深浅色切换
+- 路由改造：
+  - `/` 作为首页（布局主页）
+  - `/posts` 作为文章列表子页面
+  - `/tags`、`/gallery` 先提供占位空页面
+- 目录组织改造：新增 `src/views`，页面只保留路由职责，展示逻辑下沉到 views
+- 字体方案：引入 `Noto Serif SC`，风格贴近参考博客的阅读型排版

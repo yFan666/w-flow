@@ -9,6 +9,7 @@ export default async function PostPage({
 }) {
   const { slug } = await params
   const post = await getPostBySlug(slug)
+  // console.log('🍟🚀🍟 ~ PostPage ~ post:', post)
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-12">
