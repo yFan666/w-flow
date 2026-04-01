@@ -6,15 +6,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppService = void 0;
+exports.ResponseInterceptor = void 0;
 const common_1 = require("@nestjs/common");
-let AppService = class AppService {
-    getHello() {
-        return 'Hello World!';
+const rxjs_1 = require("rxjs");
+let ResponseInterceptor = class ResponseInterceptor {
+    intercept(context, next) {
+        const req = context.switchToHttp().getRequest();
+        const requestId = req.headers['x-request-id'] || '';
+        return next.handle().pipe((0, rxjs_1.map)((data) => ({
+            code: 0,
+            message: 'OK',
+            data,
+            timestamp: new Date().toISOString(),
+            requestId,
+        })));
     }
 };
-exports.AppService = AppService;
-exports.AppService = AppService = __decorate([
+exports.ResponseInterceptor = ResponseInterceptor;
+exports.ResponseInterceptor = ResponseInterceptor = __decorate([
     (0, common_1.Injectable)()
-], AppService);
-//# sourceMappingURL=app.service.js.map
+], ResponseInterceptor);
+//# sourceMappingURL=response.interceptor.js.map

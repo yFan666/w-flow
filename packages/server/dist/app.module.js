@@ -8,16 +8,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
+const config_1 = require("@nestjs/config");
+const typeorm_1 = require("@nestjs/typeorm");
+const posts_entity_1 = require("./posts/posts.entity");
+const posts_module_1 = require("./posts/posts.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        imports: [
+            config_1.ConfigModule.forRoot({ isGlobal: true }),
+            typeorm_1.TypeOrmModule.forRootAsync({
+                inject: [config_1.ConfigService],
+                useFactory: (cfg) => ({
+                    type: 'mysql',
+                    host: cfg.get('DB_HOST'),
+                    port: Number(cfg.get('DB_PORT')),
+                    username: cfg.get('DB_USER'),
+                    password: cfg.get('DB_PASS'),
+                    database: cfg.get('DB_NAME'),
+                    entities: [posts_entity_1.PostEntity],
+                    synchronize: true,
+                }),
+            }),
+            posts_module_1.PostsModule,
+        ],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
