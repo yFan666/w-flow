@@ -18,6 +18,8 @@ import { PostsModule } from './posts/posts.module';
         database: cfg.get<string>('DB_NAME'),
         entities: [PostEntity],
         synchronize: true,
+        charset: 'utf8mb4',
+        collation: 'utf8mb4_unicode_ci',
       }),
     }),
     PostsModule,

@@ -30,6 +30,8 @@ exports.AppModule = AppModule = __decorate([
                     database: cfg.get('DB_NAME'),
                     entities: [posts_entity_1.PostEntity],
                     synchronize: true,
+                    charset: 'utf8mb4',
+                    collation: 'utf8mb4_unicode_ci',
                 }),
             }),
             posts_module_1.PostsModule,

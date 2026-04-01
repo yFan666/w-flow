@@ -9,15 +9,15 @@
 
 ## 2026-04-01 节点2：后端基础设施
 
-- [ ] Docker MySQL 启动成功
-- [ ] 本地数据目录持久化生效
-- [ ] Nest 连接 MySQL 成功
+- [x] Docker MySQL 启动成功
+- [x] 本地数据目录持久化生效
+- [x] Nest 连接 MySQL 成功
 
 ## 2026-04-01 节点3：文章模块
 
-- [ ] posts 表创建
-- [ ] POST /api/posts 可写入
-- [ ] GET /api/posts、GET /api/posts/:slug 可读取
+- [x] posts 表创建
+- [x] POST /api/posts 可写入
+- [x] GET /api/posts、GET /api/posts/:slug 可读取
 
 ## 2026-04-01 节点4：前端对接
 
@@ -27,5 +27,15 @@
 
 ## 2026-04-01 节点5：验收
 
-- [ ] 从前端能看到数据库中的文章
+- [x] 从前端能看到数据库中的文章
 - [ ] 重启容器后数据仍在
+
+## 2026-04-01 节点6：问题排查记录（POST 写入失败）
+
+- 现象：POST /api/posts 返回 500，中文标题/摘要写入失败
+- 根因：MySQL 表默认字符集为 latin1，无法写入中文
+- 处理：
+  - 设置 TypeORM 连接 charset/collation 为 utf8mb4
+  - 设置 docker-compose MySQL 启动参数 character-set-server/collation-server 为 utf8mb4
+  - 执行 ALTER TABLE posts CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
+- 结果：已成功写入示例数据 slug=hello-db-2
