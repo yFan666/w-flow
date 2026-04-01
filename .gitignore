@@ -2,6 +2,7 @@
 node_modules
 .pnp
 .pnp.js
+docker
 
 # Next.js (web)
 web/.next/

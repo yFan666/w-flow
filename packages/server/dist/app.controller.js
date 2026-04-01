@@ -12,13 +12,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
+const shared_1 = require("@w-flow/shared");
 let AppController = class AppController {
     appService;
     constructor(appService) {
         this.appService = appService;
     }
     getHello() {
-        return this.appService.getHello();
+        const now = new Date();
+        return `${this.appService.getHello()} - Shared Time: ${(0, shared_1.formatDate)(now)}`;
     }
 };
 exports.AppController = AppController;

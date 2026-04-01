@@ -5,6 +5,10 @@ const app_module_1 = require("./app.module");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     await app.listen(process.env.PORT ?? 3000);
+    app.setGlobalPrefix('api');
 }
-bootstrap();
+bootstrap().catch((err) => {
+    console.error('启动失败:', err);
+    process.exit(1);
+});
 //# sourceMappingURL=main.js.map
