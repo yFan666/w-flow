@@ -1,5 +1,10 @@
-import { PlaceholderView } from '@/views/placeholder-view'
+import { PlaceholderView } from '@/components/common/placeholder-view'
 
 export default function GalleryPage() {
-  return <PlaceholderView title="图片" desc="图片页暂未实现，后续将接入图床与相册展示。" />
+  return (
+    <PlaceholderView
+      title="图片"
+      desc="图片页暂未实现，后续将接入图床与相册展示。"
+    />
+  )
 }

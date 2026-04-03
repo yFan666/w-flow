@@ -7,7 +7,7 @@ export function HomeView() {
         NOW / WRITING
       </p>
       <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-        欢迎来到鸥大人的博客
+        欢迎来到Gell Home
       </h1>
       <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-600 dark:text-zinc-300">
         这里记录技术成长、生活手记与持续创作。主站结构已升级为侧边菜单，文章内容在子页面维护。

@@ -44,6 +44,8 @@ export function ThemeToggle() {
       className="group relative overflow-hidden border border-zinc-200 dark:border-zinc-800"
       onClick={toggleTheme}
       onMouseMove={handleMouseMove}
+      suppressHydrationWarning
+      aria-label={mode === 'dark' ? '切换到浅色模式' : '切换到深色模式'}
     >
       <span
         ref={glowRef}
@@ -51,8 +53,8 @@ export function ThemeToggle() {
         style={{
           background:
             mode === 'dark'
-              ? 'radial-gradient(80px circle at var(--mx,50%) var(--my,50%), rgba(125, 211, 252, 0.35), rgba(125, 211, 252, 0.08) 35%, transparent 70%)'
-              : 'radial-gradient(80px circle at var(--mx,50%) var(--my,50%), rgba(244, 114, 182, 0.35), rgba(244, 114, 182, 0.08) 35%, transparent 70%)',
+              ? 'radial-gradient(40px circle at var(--mx,50%) var(--my,50%), rgba(125, 211, 252, 0.35), rgba(125, 211, 252, 0.08) 20%, transparent 75%)'
+              : 'radial-gradient(40px circle at var(--mx,50%) var(--my,50%), rgba(244, 114, 182, 0.35), rgba(244, 114, 182, 0.08) 20%, transparent 75%)',
           filter: 'blur(2px)',
           transition: 'background 220ms ease',
         }}
