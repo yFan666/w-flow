@@ -22,7 +22,7 @@ const notoSerifSc = Noto_Serif_SC({
 
 export const metadata: Metadata = {
   title: '鸥大人博客',
-  description: '基于 Next.js + shadcn/ui 的博客',
+  description: '博客',
 }
 
 export default function RootLayout({
