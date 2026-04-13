@@ -1,0 +1,47 @@
+/* reset.scss */
+
+/* box-sizing 统一 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 去默认 margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol {
+  margin: 0;
+}
+
+/* 列表 */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* 图片 */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 按钮 */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 表单 */
+input,
+textarea,
+select {
+  font: inherit;
+}
