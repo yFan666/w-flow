@@ -2,11 +2,11 @@
 import { darkTheme } from 'naive-ui'
 import { useThemeStore } from '@/stores/theme'
 
-const thtemeStore = useThemeStore()
+const themeStore = useThemeStore()
 </script>
 
 <template>
-  <n-config-provider :theme="thtemeStore.isDark ? darkTheme : null">
+  <n-config-provider :theme="themeStore.isDark ? darkTheme : null">
     <router-view />
   </n-config-provider>
 </template>
