@@ -19,7 +19,7 @@ export default defineConfig({
     vueDevTools(),
     UnoCSS(),
     AutoImport({
-      imports: ['vue', 'vue-router'],
+      imports: ['vue', 'vue-router', 'pinia'],
       dts: 'src/auto-imports.d.ts', // TS 支持
     }),
     // 2️⃣ 自动导入组件

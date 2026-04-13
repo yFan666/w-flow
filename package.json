@@ -11,5 +11,8 @@
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "@vicons/fluent": "^0.13.0"
   }
 }
