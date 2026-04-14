@@ -8,7 +8,7 @@
       content-style="padding: 24px;"
       bordered
     >
-      海淀桥
+      <Sider />
     </n-layout-sider>
     <n-layout>
       <n-layout-header bordered class="h-15 shrink-0">
@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import Header from './Header/index.vue'
 import Content from './Content/index.vue'
+import Sider from './Sider/index.vue'
 </script>
 
 <style lang="scss" scoped></style>

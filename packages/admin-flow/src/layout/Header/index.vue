@@ -10,7 +10,7 @@
       >
         <template #icon>
           <n-icon>
-            <WeatherSunny16Regular v-if="!themeStore.isDark" />
+            <WeatherSunny16Regular v-if="themeStore.isDark" />
             <WeatherMoon24Regular v-else />
           </n-icon>
         </template>
