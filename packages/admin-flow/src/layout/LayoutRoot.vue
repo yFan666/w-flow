@@ -22,9 +22,9 @@
 </template>
 
 <script setup lang="ts">
-import Header from './Header/index.vue'
-import Content from './Content/index.vue'
-import Sider from './Sider/index.vue'
+import Header from '@/layout/components/LayoutHeader.vue'
+import Content from '@/layout/components/LayoutContent.vue'
+import Sider from '@/layout/components/LayoutSider.vue'
 </script>
 
 <style lang="scss" scoped></style>
